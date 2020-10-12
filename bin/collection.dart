@@ -12,9 +12,12 @@ void main(List<String> arguments) {
   // print('$s Hello world!');
 
 
+  //List容器
+  list();
+
 
   //Set容器
-  set();
+  // set();
   // setConst();
 
 
@@ -79,6 +82,15 @@ void map() {
 
 }
 
+
+void list() {
+
+  var elements = [1,23,3,41];
+  print(elements);
+  print(elements.elementAt(0));
+  print(elements[0]);
+
+}
 
 void set() {
   // var elements = <String>{};
