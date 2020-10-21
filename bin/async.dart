@@ -28,7 +28,7 @@ void main() {
 
   // await();
   // yield();
-  isolate();
+
 }
 
 void await() async {
@@ -177,37 +177,6 @@ Stream<int> streamInt() async* {
   }
 }
 
-void isolate() {
-  //方式一
-  // Isolate.spawn((xx) {
-  //   for (var i = 0; i < 99999; ++i) {
-  //     print('Isolate2 | $i | n = $xx');
-  //   }
-  // }, n);
-  //
-  // for (var i = 0; i < 99999; ++i) {
-  //   print('main | $i | n = ${n++}');
-  // }
-
-
-  //方式二
-  int n = 0;
-  final ISO iso = ISO();
-  Isolate.spawn(sk, iso);
-
-  while(n++ < 20){
-    sleep(Duration(seconds: 1));
-    print('main | n = ${iso.n++}');
-  }
-}
-
-void sk(ISO msg) {
-  int n = 0;
-  while(n++ < 10) {
-    sleep(Duration(seconds: 1));
-    print('Isolate | n = ${msg.n}');
-  }
-}
 
 void futureDelay() {
   //同步操作
@@ -222,9 +191,4 @@ void future() {
 
 void futureSync() async {
   Future.sync(() => 1).then((value) => print(value));
-}
-
-
-class ISO {
-  int n = 0;
 }

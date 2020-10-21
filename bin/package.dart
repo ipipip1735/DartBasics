@@ -1,8 +1,17 @@
-import 'package:DartBasics/pkg.dart';
+///测试dart包导入导出
 
+
+// import 'package:DartBasics/pkg.dart'; //使用scheme前缀导入包
+import '/E:/Program/Flutter/DartBasics/lib/pkg.dart'; //使用绝对路径导入包
+
+
+/**
+ * Created by Administrator on 2020/9/29.
+ */
 void main(){
   print('--mian--');
 
+  //测试dart包导入导出
   A a = A(null, 'dsd', 55);
   print('${a.a} - ${a.b}');
 
