@@ -6,7 +6,7 @@ class A{
   String b = 'bbbb';
   final int c;
   final String d;
-  int _f;
+  int _f = 0;
   int get f => _f;
 
   A(a, this.b, f,{this.c = 1988, this.d = ''}){
