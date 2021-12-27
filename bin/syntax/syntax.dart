@@ -39,10 +39,32 @@ finalConst() {
 }
 
 
+
+/**
+ * 使用dynamic
+ */
+void main() {
+  dynamic aa = 'd';
+  print(aa is String);
+  aa = 11;
+  print(aa is int);
+
+
+  //var是初始化时设置变量类型，但无法动态改变类型
+  // var bb = 's';
+  // bb = 99;
+
+  //final声明的是常量，值和类型都不允许改变
+  // final cc = 'iiiii';
+  // cc = 'vv';
+
+}
+
+
 /**
  * 位运算符
  */
-void main() {
-  var k = ~0x0f;
-  print('k = $k');
-}
+// void main() {
+//   var k = ~0x0f;
+//   print('k = $k');
+// }

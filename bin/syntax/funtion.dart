@@ -13,11 +13,20 @@ main() {
   // closure();//闭包作用域
 
 
-  funtionObject();//函数类型
+  // funtionObject();//函数类型
+
+  // var s = view();//使用箭头表达式
+  // print('s is $s');
+
+  read(1, 33, 333);
 }
 
-void funtionObject() {
+String view() => 'ddd';
 
+
+read(_, t, __) => print('t = $t');
+
+void funtionObject() {
 
   //限定参数类型和返回值
   String Function(int k) s;//限定返回值类型为String，参数类型为int

@@ -1,85 +1,6 @@
-import 'dart:mirrors';
-
 /**
- * Created by Administrator on 2020/9/29.
+ * Created by Administrator on 2021/10/31.
  */
-// void main(List<String> arguments) {
-//   //getter和setter
-//   D d = D();
-//   print('d.iii = ${d.iii}');
-//
-//   d.iii = 33;
-//   print('d.iii = ${d.iii}');
-//
-// }
-//
-// class D {
-//   //iii属性
-//   int get iii {
-//     print('~~get~~');
-//     return 22;
-//   }
-//
-//   set iii(n) {
-//     print('~set~~');
-//     iii = n;
-//   }
-// }
-
-
-/**
- * 构造函数默认参数
- */
-main() {
-  B b = B(1, b: 'ok');
-  print('${b.a}, ${b.b}');
-}
-
-
-class B {
-  final int a;
-  final String b;
-
-  const B(this.a, {this.b = 'sd'});
-}
-
-
-
-/**
- * 常构造函数
- */
-// main() {
-//   // E ee = E(name: 'oms');
-//   // print(ee.name);
-//   // print(ee.name[1]);
-//
-//
-//   // A a = A(1, 'dd');
-//   // // A a = const A(1, 'dd');
-//   // print(a.a);
-//
-//
-//   // FF ff = FF(1,2);
-// }
-
-// class E {
-//   final String name;
-//
-//   const E({this.name});
-// }
-
-
-// class A {
-//   int a = 0;
-//   String b = "";
-//
-//   A(a, b) {
-//     this.a = a;
-//     this.b = b;
-//   }
-// }
-
-
 
 /**
  * 反射
@@ -88,7 +9,6 @@ class B {
 //   // C c = C(12, 42);
 //   // print(MirrorSystem.getName(reflect(c).type.simpleName));
 // }
-
 
 /**
  * 常对象
@@ -112,6 +32,44 @@ class B {
 //   // ManyOperation d = (d,b) => 1;
 // }
 
+/**
+ * 继承
+ */
+main() {
+  // G g = new G();
+  // g.show('dd');
+
+  GG gg = GG();
+  print('gg.show() = ${gg.show()}');
+}
+
+class G {
+  show() {
+    print('~~GG.show()~~');
+    return 'one';
+  }
+
+// void show(String k) {
+//   print('~~One.show()~~');
+// }
+}
+
+class GG extends G {
+
+  show(){
+    return 55;
+  }
+
+  // String show(String k) {
+  //   print('~~One.show()~~');
+  //   return 'd';
+  // }
+  // String show(String k) {
+  //   print('~~GG.show()~~');
+  //   return 'd';
+  // }
+}
+
 class F {
   int a = 0;
 
@@ -134,8 +92,6 @@ class FF extends F {
 
 typedef int ManyOperation(int firstNo, int secondNo);
 
-
-
 class C {
   int a, b;
 
@@ -144,8 +100,6 @@ class C {
     // print('${this.a}');
   }
 }
-
-
 
 class MTwo {
   void hear() {
