@@ -1,5 +1,12 @@
-void main(){
-  print('go');
+void show(){
+  print('show');
 }
 
+void main(args, msg){
+  var k = 1;
+  print('~~main()~~');
+  // print('msg is $msg');
+  print('k = $k');
 
+  // print('args is ${args.size()}');
+}

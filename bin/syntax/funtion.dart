@@ -18,7 +18,18 @@ main() {
   // var s = view();//使用箭头表达式
   // print('s is $s');
 
-  read(1, 33, 333);
+  // read(1, 33, 333);
+
+
+  var k = fnOne('one', 'two');//函数参数和返回值类型可以省略
+  print('${k.runtimeType}|k = $k');
+
+}
+
+
+fnOne(one, two){
+  print('one = $one, two = $two');
+  return 'dd';
 }
 
 String view() => 'ddd';
